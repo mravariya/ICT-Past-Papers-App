@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ICT Past Papers Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ICT Past Papers Explorer</h1>
+
+  <!-- Filter Controls -->
+  <div id="filters">
+    <input type="text" id="search" placeholder="Search anything...">
+    <select id="chapterFilter"><option value="">All Chapters</option></select>
+    <select id="aoFilter"><option value="">All AO</option></select>
+    <select id="paperFilter"><option value="">All Papers</option></select>
+    <button id="resetFilters">Reset</button>
+  </div>
+
+  <!-- Toggle -->
+  <div id="viewToggle">
+    <label><input type="radio" name="view" value="qs" checked> Question + Strategy</label>
+    <label><input type="radio" name="view" value="qsa"> Question + Strategy + Answer</label>
+  </div>
+
+  <!-- Table -->
+  <table id="questionsTable">
+    <thead>
+      <tr>
+        <th>Chapter</th>
+        <th>Subtopic</th>
+        <th>Question Number</th>
+        <th>Question</th>
+        <th>Strategy</th>
+        <th class="answerCol">Answer</th>
+        <th>AO</th>
+        <th>Marks</th>
+        <th>Paper Code</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
