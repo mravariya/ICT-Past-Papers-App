@@ -6,11 +6,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>ICT Past Papers Explorer</h1>
+  <header>
+    <h1>ICT Past Papers Explorer</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
 
   <!-- Filter Controls -->
   <div id="filters">
-    <input type="text" id="search" placeholder="Search anything...">
+    <input type="text" id="search" placeholder="🔍 Search anything...">
     <select id="chapterFilter"><option value="">All Chapters</option></select>
     <select id="aoFilter"><option value="">All AO</option></select>
     <select id="paperFilter"><option value="">All Papers</option></select>
@@ -24,22 +27,24 @@
   </div>
 
   <!-- Table -->
-  <table id="questionsTable">
-    <thead>
-      <tr>
-        <th>Chapter</th>
-        <th>Subtopic</th>
-        <th>Question Number</th>
-        <th>Question</th>
-        <th>Strategy</th>
-        <th class="answerCol">Answer</th>
-        <th>AO</th>
-        <th>Marks</th>
-        <th>Paper Code</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div class="table-container">
+    <table id="questionsTable">
+      <thead>
+        <tr>
+          <th>Chapter</th>
+          <th>Subtopic</th>
+          <th>Q. No.</th>
+          <th>Question</th>
+          <th>Strategy</th>
+          <th class="answerCol">Answer</th>
+          <th>AO</th>
+          <th>Marks</th>
+          <th>Paper Code</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="script.js"></script>
