@@ -1,22 +1,158 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#filters, #viewToggle {
+/* --- Light Theme (default) --- */
+:root {
+  --bg: #ffffff;
+  --text: #1d1d1f;
+  --secondary: #6e6e73;
+  --accent: #0071e3;
+  --card: #f5f5f7;
+  --border: #d2d2d7;
+}
+
+/* --- Dark Theme --- */
+body.dark {
+  --bg: #1d1d1f;
+  --text: #f5f5f7;
+  --secondary: #a1a1a6;
+  --accent: #0a84ff;
+  --card: #2c2c2e;
+  --border: #3a3a3c;
+}
+
+/* --- Body --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  line-height: 1.5;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+#themeToggle {
+  background: var(--card);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+#themeToggle:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* --- Filters --- */
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#filters input, #filters select, #filters button {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border 0.3s, background 0.3s;
+}
+
+#filters input:focus, #filters select:focus {
+  outline: none;
+  border: 1px solid var(--accent);
+}
+
+#filters button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#filters button:hover {
+  background: #005bb5;
+}
+
+/* --- View Toggle --- */
+#viewToggle {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 20px;
+  font-size: 0.95rem;
+}
+
+/* --- Table --- */
+.table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 800px;
+}
+
+thead {
+  background: var(--card);
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  font-weight: 600;
+  color: var(--secondary);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+tr:hover {
+  background: var(--card);
+  transition: background 0.3s;
 }
 
 .answerCol {
-  display: table-cell; /* Hidden dynamically if view = qs */
+  display: table-cell;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  #filters {
+    flex-direction: column;
+  }
+  th, td {
+    padding: 10px;
+  }
 }
